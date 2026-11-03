@@ -1,0 +1,52 @@
+# Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+
+# Conda
+.conda/
+conda-meta/
+anaconda/
+miniconda/
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents
+anaconda_projects
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data
+data/
+
+# Vector databases / indexes
+chroma/
+chroma_db/
+faiss_index/
+
+# Uploaded/generated data
+uploads/
+documents/
+
+# Secrets / credentials
+*.pem
+*.key
+credentials.json
