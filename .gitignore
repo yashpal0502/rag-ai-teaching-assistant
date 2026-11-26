@@ -35,7 +35,8 @@ Thumbs.db
 *.log
 
 # Data
-data/
+data/videos/
+data/audios/
 
 # Vector databases / indexes
 chroma/
@@ -50,3 +51,6 @@ documents/
 *.pem
 *.key
 credentials.json
+
+# Streamlit secrets
+.streamlit/secrets.toml
