@@ -1,6 +1,6 @@
 import requests
 
-from config import OLLAMA_BASE_URL, EMBEDDING_MODEL, REQUEST_TIMEOUT
+from src.config import OLLAMA_BASE_URL, EMBEDDING_MODEL, REQUEST_TIMEOUT
 
 
 def create_embedding(text: str) -> list[float]:

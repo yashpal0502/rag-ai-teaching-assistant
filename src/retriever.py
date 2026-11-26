@@ -4,8 +4,8 @@ import pandas as pd
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from config import EMBEDDINGS_FILE
-from embeddings import create_embedding
+from src.config import EMBEDDINGS_FILE
+from src.embeddings import create_embedding
 
 # Load Saved Embeddings
 
