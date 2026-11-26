@@ -39,8 +39,8 @@ def create_embedding(text: str) -> list[float]:
         raise RuntimeError(f"Ollama API error: {e}")
 
 
-emb = create_embedding("RAG combines information retrieval with language generation.")
+# emb = create_embedding("RAG combines information retrieval with language generation.")
 
-print("Embedding type:", type(emb))
-print("Embedding dimensions:", len(emb))
-print("First five values:", emb[:5])
+# print("Embedding type:", type(emb))
+# print("Embedding dimensions:", len(emb))
+# print("First five values:", emb[:5])
