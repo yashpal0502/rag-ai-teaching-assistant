@@ -8,14 +8,14 @@ Ollama-hosted language model with video titles and timestamps.
 
 ## Features
 
--   Course-focused question answering using available transcript chunks.
--   Semantic search using BGE-M3 query embeddings and cosine similarity.
--   LLM-generated answers using Llama 3.2 through Ollama.
--   Video title, video number, and timestamp references.
--   Adjustable top-K retrieval.
--   Streamlit chat interface with session-based chat history.
--   Separate modules for configuration, embeddings, retrieval, and RAG
-    orchestration.
+- Course-focused question answering using available transcript chunks.
+- Semantic search using BGE-M3 query embeddings and cosine similarity.
+- LLM-generated answers using Llama 3.2 through Ollama.
+- Video title, video number, and timestamp references.
+- Adjustable top-K retrieval.
+- Streamlit chat interface with session-based chat history.
+- Separate modules for configuration, embeddings, retrieval, and RAG
+  orchestration.
 
 ## How It Works
 
@@ -29,7 +29,7 @@ Ollama-hosted language model with video titles and timestamps.
     3.2.
 8.  The answer and source details are displayed in Streamlit.
 
-``` text
+```text
 User question
      |
      v
@@ -56,19 +56,21 @@ Streamlit interface
 
 ## Technology Stack
 
-  Component                 Technology
-  ------------------------- ---------------
-  Programming language      Python
-  User interface            Streamlit
-  Embedding model           BGE-M3
-  Language model            Llama 3.2
-  Local model runtime/API   Ollama
-  Speech transcription      Whisper
-  Video/audio processing    FFmpeg
-  Data handling             Pandas, NumPy
-  Similarity calculation    scikit-learn
-  Persistence               Joblib
-  Transcript format         JSON
+Component Technology
+
+---
+
+Programming language Python
+User interface Streamlit
+Embedding model BGE-M3
+Language model Llama 3.2
+Local model runtime/API Ollama
+Speech transcription Whisper
+Video/audio processing FFmpeg
+Data handling Pandas, NumPy
+Similarity calculation scikit-learn
+Persistence Joblib
+Transcript format JSON
 
 ## Project Structure
 
@@ -76,26 +78,26 @@ The structure below shows the main application files. Notebook names and
 optional data files may differ depending on the completed tutorial
 steps.
 
-``` text
+```text
 RAG Based AI Teaching Assistant/
 |
 ├── data/
-│   ├── videos/                 
-│   ├── audios/                 
-│   ├── jsons/                  
+│   ├── videos/
+│   ├── audios/
+│   ├── jsons/
 │   └── embeddings/
 │       └── chunk_embeddings.joblib
 |
-├── notebooks/                  
+├── notebooks/
 |
 ├── src/
 │   ├── __init__.py
-│   ├── config.py               
-│   ├── embeddings.py           
-│   ├── retriever.py            
-│   └── rag_pipeline.py         
+│   ├── config.py
+│   ├── embeddings.py
+│   ├── retriever.py
+│   └── rag_pipeline.py
 |
-├── app.py                      
+├── app.py
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -103,10 +105,10 @@ RAG Based AI Teaching Assistant/
 
 ## Prerequisites
 
--   Python 3.9 or later.
--   Ollama installed and running locally.
--   Ollama models `bge-m3` and `llama3.2`.
--   Precomputed embeddings at `data/embeddings/chunk_embeddings.joblib`.
+- Python 3.9 or later.
+- Ollama installed and running locally.
+- Ollama models `bge-m3` and `llama3.2`.
+- Precomputed embeddings at `data/embeddings/chunk_embeddings.joblib`.
 
 Whisper and FFmpeg are needed when repeating the video-to-transcript
 preprocessing workflow. They are not required merely to run the
@@ -117,7 +119,7 @@ been generated.
 
 ### 1. Clone the repository
 
-``` bash
+```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd "RAG Based AI Teaching Assistant"
 ```
@@ -128,7 +130,7 @@ Replace the placeholder with the repository's actual clone URL.
 
 On Windows PowerShell:
 
-``` powershell
+```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
@@ -138,7 +140,7 @@ for your shell or invoke the environment's Python executable directly.
 
 ### 3. Install Python dependencies
 
-``` powershell
+```powershell
 python -m pip install -r requirements.txt
 ```
 
@@ -147,7 +149,7 @@ python -m pip install -r requirements.txt
 Install Ollama from its official website, then download the required
 models:
 
-``` powershell
+```powershell
 ollama pull bge-m3
 ollama pull llama3.2
 ```
@@ -155,7 +157,7 @@ ollama pull llama3.2
 Make sure the Ollama service is running before starting the application.
 The default local API address is:
 
-``` text
+```text
 http://localhost:11434
 ```
 
@@ -163,7 +165,7 @@ http://localhost:11434
 
 Confirm that this file exists:
 
-``` text
+```text
 data/embeddings/chunk_embeddings.joblib
 ```
 
@@ -174,7 +176,7 @@ missing, complete the embedding-generation workflow first.
 
 From the project root:
 
-``` powershell
+```powershell
 python -m streamlit run app.py
 ```
 
@@ -185,24 +187,28 @@ application in a browser.
 
 Application settings are centralized in `src/config.py`.
 
-  --------------------------------------------------------------------------
-  Variable                Default                    Purpose
-  ----------------------- -------------------------- -----------------------
-  `OLLAMA_BASE_URL`       `http://localhost:11434`   Ollama API base address
+---
 
-  `EMBEDDING_MODEL`       `bge-m3`                   Model used to embed
-                                                     queries
+Variable Default Purpose
 
-  `LLM_MODEL`             `llama3.2`                 Model used to generate
-                                                     answers
+---
 
-  `REQUEST_TIMEOUT`       `120`                      HTTP request timeout in
-                                                     seconds
-  --------------------------------------------------------------------------
+`OLLAMA_BASE_URL` `http://localhost:11434` Ollama API base address
+
+`EMBEDDING_MODEL` `bge-m3` Model used to embed
+queries
+
+`LLM_MODEL` `llama3.2` Model used to generate
+answers
+
+`REQUEST_TIMEOUT` `120` HTTP request timeout in
+seconds
+
+---
 
 Example PowerShell configuration:
 
-``` powershell
+```powershell
 $env:OLLAMA_BASE_URL = "http://localhost:11434"
 $env:EMBEDDING_MODEL = "bge-m3"
 $env:LLM_MODEL = "llama3.2"
@@ -211,32 +217,32 @@ $env:REQUEST_TIMEOUT = "120"
 
 ## Current Implementation Notes
 
--   The application uses saved transcript embeddings; it does not rerun
-    Whisper transcription every time it starts.
--   The retriever uses cosine similarity and returns the configured
-    top-K chunks.
--   Retrieved sources include video metadata and timestamps.
--   The tutorial's proposed operation of merging every five consecutive
-    transcript chunks into larger chunks is intentionally excluded for
-    now. The current application continues to use the existing chunk and
-    embedding dataset.
--   If chunking is changed later, embeddings must be regenerated for the
-    new chunk text and the retriever's expected data structure must be
-    preserved.
+- The application uses saved transcript embeddings; it does not rerun
+  Whisper transcription every time it starts.
+- The retriever uses cosine similarity and returns the configured
+  top-K chunks.
+- Retrieved sources include video metadata and timestamps.
+- The tutorial's proposed operation of merging every five consecutive
+  transcript chunks into larger chunks is intentionally excluded for
+  now. The current application continues to use the existing chunk and
+  embedding dataset.
+- If chunking is changed later, embeddings must be regenerated for the
+  new chunk text and the retriever's expected data structure must be
+  preserved.
 
 ## Limitations and Future Improvements
 
--   The current configuration expects Ollama at the configured API
-    address. A cloud-hosted Streamlit app cannot use the developer's
-    personal `localhost`; cloud deployment requires a reachable
-    model-serving endpoint or another inference arrangement.
--   Answer quality depends on transcript quality, chunk boundaries,
-    embedding quality, retrieval relevance, and the language model.
--   The system should be evaluated with representative course questions
-    to assess answer correctness and source relevance.
--   Possible future improvements include better chunking strategies,
-    retrieval evaluation, relevance thresholds, source-linked video
-    playback, and cloud-compatible inference.
+- The current configuration expects Ollama at the configured API
+  address. A cloud-hosted Streamlit app cannot use the developer's
+  personal `localhost`; cloud deployment requires a reachable
+  model-serving endpoint or another inference arrangement.
+- Answer quality depends on transcript quality, chunk boundaries,
+  embedding quality, retrieval relevance, and the language model.
+- The system should be evaluated with representative course questions
+  to assess answer correctness and source relevance.
+- Possible future improvements include better chunking strategies,
+  retrieval evaluation, relevance thresholds, source-linked video
+  playback, and cloud-compatible inference.
 
 ## Troubleshooting
 
@@ -244,15 +250,15 @@ $env:REQUEST_TIMEOUT = "120"
 
 Run Streamlit through the active Python interpreter:
 
-``` powershell
+```powershell
 python -m streamlit run app.py
 ```
 
 ### Cannot connect to Ollama
 
--   Confirm that Ollama is installed and running.
--   Confirm that `OLLAMA_BASE_URL` is correct.
--   Check that the required models have been downloaded.
+- Confirm that Ollama is installed and running.
+- Confirm that `OLLAMA_BASE_URL` is correct.
+- Check that the required models have been downloaded.
 
 ### Embeddings file not found
 
@@ -263,6 +269,6 @@ the path in `src/config.py` matches the actual file location.
 
 Activate the intended virtual environment and reinstall dependencies:
 
-``` powershell
+```powershell
 python -m pip install -r requirements.txt
 ```

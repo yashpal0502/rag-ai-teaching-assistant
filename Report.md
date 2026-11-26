@@ -292,6 +292,7 @@ The current implementation establishes the main local RAG workflow. Further eval
 
 # Appendix A. Main Project Structure
 
+```text
 RAG Based AI Teaching Assistant/
 |
 ├── data/
@@ -314,3 +315,4 @@ RAG Based AI Teaching Assistant/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
