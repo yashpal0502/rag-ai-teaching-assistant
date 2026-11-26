@@ -1,0 +1,8 @@
+In the Sigma Web Development course, Tailwind CSS is taught in Video 100, specifically in the following timestamps:
+
+* The video starts with an introduction to Tailwind CSS (0.0 seconds - 2.5 seconds).
+* Tailwind CSS is mentioned again at 52.38 seconds to 56.04 seconds, where the instructor emphasizes the importance of using it to design the layout.
+* The instructor also mentions playing.tailwindcss.com, which is likely a tutorial or resource website, at 115.3 seconds to 119.3 seconds.
+* Additionally, the instructor mentions using Tailwind CSS to design the layout, but also notes that it's not a substitute for learning from resources like play.tailwindcss.com, at 77.8 seconds to 80.46 seconds and 119.3 seconds to 123.3 seconds.
+
+If you'd like to learn more about Tailwind CSS and how to use it for designing layouts, I recommend checking out Video 100.
